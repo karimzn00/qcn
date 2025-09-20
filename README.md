@@ -31,27 +31,27 @@ Commit created successfully: feat(cli): add new interactive CLI commit builder
 ## Installation
 
 1. Clone the repo:
-
-   git clone [https://github.com/](https://github.com/)<your-username>/qcn.git
+```
+   git clone [[https://github.com/](https://github.com/)<your-username>/qcn.git](https://github.com/karimzn00/qcn.git)
    cd qcn
-
+```
 2. Create and activate a virtual environment:
-
+```
    python3 -m venv env
    source env/bin/activate      # Linux/Mac
-
+```
    # OR
-
+```
    env\Scripts\activate       # Windows
-
+```
 3. Install QCN in editable mode:
-
+```
    pip install -e .
-
+```
 4. Install other dependencies (if needed):
-
+```
    pip install -r requirements.txt
-
+```
 ---
 
 ## Usage
