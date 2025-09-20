@@ -15,6 +15,34 @@
 
 ---
 
+## Utility / Purpose
+
+QCN helps developers maintain **clean and standardized Git commit messages**. It is useful for:
+
+* Ensuring commit messages follow **conventional commit standards** (`feat`, `fix`, `chore`, etc.).
+* Interactive commit building for faster and error-free commits.
+* Automatic commit message validation and history tracking.
+* Optional Git hooks to enforce quality across teams.
+* Improving readability, changelog generation, and CI/CD automation.
+
+---
+
+## Installation via pip
+
+Once published to PyPI, you can install QCN easily:
+
+```bash
+pip install qcn
+```
+
+After installation, you can run the CLI using:
+
+```bash
+qcn --help
+```
+
+---
+
 ## Demo (ASCII representation)
 
 ```
@@ -28,44 +56,18 @@ Commit created successfully: feat(cli): add new interactive CLI commit builder
 
 ---
 
-## Installation
-
-1. Clone the repo:
-```
-   git clone https://github.com/karimzn00/qcn.git
-   cd qcn
-```
-2. Create and activate a virtual environment:
-```
-   python3 -m venv env
-   source env/bin/activate      # Linux/Mac
-```
-   # OR
-```
-   env\Scripts\activate       # Windows
-```
-3. Install QCN in editable mode:
-```
-   pip install -e .
-```
-4. Install other dependencies (if needed):
-```
-   pip install -r requirements.txt
-```
----
-
 ## Usage
 
 ### Initialize configuration
 
-```
+```bash
 git init                 # only if your project is not a Git repo yet
 qcn init                 # creates default .qcnrc configuration
 ```
 
 ### Interactive commit builder
 
-```
+```bash
 qcn new
 ```
 
@@ -80,19 +82,19 @@ Then QCN will commit automatically if you confirm.
 
 ### Lint a commit message
 
-```
+```bash
 qcn lint <file-or-message>
 ```
 
 ### Show commit history
 
-```
+```bash
 qcn history
 ```
 
 ### Install Git commit-msg hook
 
-```
+```bash
 qcn install-hook
 # OR
 bash scripts/install_hook.sh
@@ -102,7 +104,7 @@ bash scripts/install_hook.sh
 
 ## Running Tests
 
-```
+```bash
 pytest tests/test_validators.py
 ```
 
@@ -117,47 +119,36 @@ All tests should pass ✅
 Cause: Python cannot find the package.
 Fix:
 
-1. Make sure your folder structure is correct:
-
-   qcn\_project/
-   ├── qcn/
-   │   ├── **init**.py
-   │   ├── cli.py
-   │   └── ...
-   ├── setup.py
-   └── ...
-
+1. Make sure your folder structure is correct.
 2. Reinstall in editable mode:
 
-   pip uninstall qcn -y
-   pip install -e .
-
----
+```bash
+pip uninstall qcn -y
+pip install -e .
+```
 
 ### 2. RuntimeError: Not in a git repository
 
 Cause: `qcn new` requires a Git repository.
 Fix: Initialize Git:
 
-```
-git init  
-git add -A  
-git commit -m "chore: initial commit"  
+```bash
+git init
+git add -A
+git commit -m "chore: initial commit"
 qcn new
 ```
-
----
 
 ### 3. Import "toml" could not be resolved
 
 Cause: Missing dependency `toml`.
 Fix:
 
-```
+```bash
 pip install toml
 ```
 
-Reload your editor and make sure the correct Python interpreter is selected.
+Reload your editor and ensure the correct Python interpreter is selected.
 
 ---
 
@@ -179,7 +170,7 @@ Reload your editor and make sure the correct Python interpreter is selected.
 ---
 
 ## License
-
+```bash
 MIT License
 
 Copyright (c) 2025 <Your Name>
@@ -189,3 +180,4 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+```
