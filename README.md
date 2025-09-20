@@ -32,7 +32,7 @@ Commit created successfully: feat(cli): add new interactive CLI commit builder
 
 1. Clone the repo:
 ```
-   git clone [[https://github.com/](https://github.com/)<your-username>/qcn.git](https://github.com/karimzn00/qcn.git)
+   git clone https://github.com/karimzn00/qcn.git
    cd qcn
 ```
 2. Create and activate a virtual environment:
