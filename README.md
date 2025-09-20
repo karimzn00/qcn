@@ -15,15 +15,46 @@
 
 ---
 
-## Utility / Purpose
+## Purpose / Utility
 
-QCN helps developers maintain **clean and standardized Git commit messages**. It is useful for:
+QCN helps developers maintain **clean and standardized Git commit messages**. It solves common problems such as messy commits, inconsistent formatting, and difficulties generating automated changelogs.
 
-* Ensuring commit messages follow **conventional commit standards** (`feat`, `fix`, `chore`, etc.).
-* Interactive commit building for faster and error-free commits.
-* Automatic commit message validation and history tracking.
-* Optional Git hooks to enforce quality across teams.
-* Improving readability, changelog generation, and CI/CD automation.
+### Problems QCN Solves
+
+* Messy or inconsistent commit messages.
+* Hard to read Git history.
+* Difficult to generate changelogs automatically.
+* Team collaboration chaos due to inconsistent commits.
+* CI/CD pipelines failing because of improper commit messages.
+
+### What QCN Does
+
+1. **Interactive commit building**: Guides you to select commit type, scope, short description, and optional extended description.
+2. **Validation / linting**: Ensures messages follow conventional commit standards (`type(scope): short description`).
+3. **Keeps commit history**: Stores commits made through QCN in `.qcn_history.json`.
+4. **Optional Git hooks**: Auto-validates commit messages during `git commit`.
+
+### Benefits
+
+| Problem                               | QCN Solution                                                |
+| ------------------------------------- | ----------------------------------------------------------- |
+| Messy or inconsistent commit messages | Enforces structured conventional commits                    |
+| Hard to generate changelogs           | Commit types allow automated changelog generation           |
+| Team workflow chaos                   | Optional Git hooks enforce commit standards across the team |
+| Forgetting commit format              | Interactive prompts guide you every time                    |
+
+### Example
+
+```bash
+$ qcn new
+Select commit type: feat
+Enter scope (optional): cli
+Enter short description: add interactive commit builder
+Do you want to add extended description? (y/N): n
+Commit created successfully: feat(cli): add interactive commit builder
+```
+
+✅ After this, you have a **clean, standardized commit** without thinking about the format.
 
 ---
 
@@ -39,19 +70,6 @@ After installation, you can run the CLI using:
 
 ```bash
 qcn --help
-```
-
----
-
-## Demo (ASCII representation)
-
-```
-$ qcn new
-Select commit type: feat
-Enter scope (optional): cli
-Enter short description: add new interactive CLI commit builder
-Do you want to add extended description? (y/N): n
-Commit created successfully: feat(cli): add new interactive CLI commit builder
 ```
 
 ---
@@ -173,7 +191,7 @@ Reload your editor and ensure the correct Python interpreter is selected.
 ```bash
 MIT License
 
-Copyright (c) 2025 karimzn00
+Copyright (c) 2025 <Your Name>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
