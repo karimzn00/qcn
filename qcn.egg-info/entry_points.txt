@@ -1,0 +1,2 @@
+[console_scripts]
+qcn = qcn.cli:main
